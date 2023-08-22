@@ -1,0 +1,514 @@
+@charset 'UTF-8';
+/**
+ * Theme Name:  Corporate Pro
+ * Theme URI:   http://seothemes.com/themes/corporate-pro/
+ * Description: Corporate Pro child theme for the Genesis Framework.
+ * Author:      SEO Themes
+ * Author URI:  http://seothemes.com/
+ * Version:     1.0.0
+ * Text Domain: corporate-pro
+ * Tags:        one-column, two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-background, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+ * Template:    genesis
+ * Template     Version: 2.6.1
+ * License:     GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * GitHub URI:  https://github.com/seothemes/corporate-pro
+ */
+/* # Table of Contents
+
+- Reset
+	- Normalize 7.0
+- Defaults
+	- Box Sizing
+	- Float Clearing
+	- Typography
+	- Headings
+	- Forms
+	- Objects
+	- Tables
+	- Accessibility
+- Layout
+	- Site Containers
+	- Content Width
+	- Column Classes
+	- Gallery
+	- Pricing Tables
+- Common
+	- Avatars
+	- Genesis
+	- Search Form
+	- WordPress
+	- Gutenberg
+- Header
+	- Site Header
+	- Title Area
+	- Before Header
+	- Header Right
+	- Hero Section
+- Menus
+	- Menus
+	- Sub Menus
+	- Specific Menus
+	- Menu Toggle
+	- Sub Menu Toggle
+- Content
+	- Entries
+	- Entry Content
+	- Entry Titles
+	- Entry Meta
+	- Entry Footer
+	- Pagination
+	- Comments
+- Sidebars
+	- Sidebars
+	- Widgets
+- Footer
+	- Site Footer
+	- Before Footer
+	- Footer Widgets
+- Plugins
+	- Genesis eNews Extended
+	- Genesis Portfolio Pro
+	- Genesis Simple FAQ
+	- Genesis Simple Share
+	- Genesis Testimonial Slider
+	- Google Map
+	- Ninja Forms
+	- SEO Slider
+	- Simple Social Icons
+	- WP Featherlight
+	- WooCommerce Menu Cart
+- Home
+	- Front Page Widgets
+- Print
+	- Print Styles
+*/
+
+/* @import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+	/* =Base Elements
+	-------------------------------------------------------------- */
+
+/* =Master Styles Typography
+	-------------------------------------------------------------- */
+    .h1 {
+        @apply text-8xl md:text-14xl lg:text-16xl font-extrabold;
+    }
+    
+    .h1-fluid {
+        font-size: clamp(2.5rem, 3.75vw, 4.6875rem);
+    }
+    
+    .h2 {
+        @apply text-7xl md:text-13xl lg:text-15xl font-extrabold;
+    }
+    
+    .h3-fluid {
+        font-size: clamp(2.1875rem, 3.75vw, 4.0625rem);
+    }
+    
+    .h3 {
+        @apply text-6xl md:text-11xl lg:text-12xl font-extrabold;
+    }
+    
+    .h3-fluid {
+        font-size: clamp(1.875rem, 3.75vw, 3.4375rem);
+    }
+    
+    .h4 {
+        @apply text-4xl md:text-9xl lg:text-10xl font-bold;
+    }
+    
+    .h5 {
+        @apply text-2xl md:text-5xl lg:text-6xl font-extrabold;
+    }
+    
+    .h5-fluid {
+        font-size: clamp(1.3125rem, 1.6vw, 1.875rem);
+    }
+    
+    .h6 {
+        @apply text-lg md:text-3xl lg:text-4xl font-bold;
+    }
+    
+    .h7 {
+        @apply text-base md:text-lg lg:text-xl font-extrabold uppercase leading-none;
+    }
+    
+    .h8 {
+        @apply lg:text-lg font-semibold;
+    }
+    
+    .h9 {
+        @apply text-base font-bold uppercase leading-none;
+    }
+
+    p {
+        @apply mb-4;
+    }
+
+	.anchor-link-dark {
+		@apply text-white underline decoration-cyber-blue decoration-3 p-0.5 hover:bg-cyber-blue hover:rounded-sm hover:text-blue;
+	}
+
+    p a,
+	.anchor-parent a,
+	.anchor-link {
+		@apply underline decoration-cyber-blue decoration-3 p-0.5 hover:bg-cyber-blue hover:rounded-sm hover:text-blue;
+    }
+
+	a {
+		@apply transition duration-300 ease-in-out;
+	}
+
+    ul {
+        @apply mb-4 ml-4;
+    }
+
+    ul li {
+        @apply relative pl-6 mb-2;
+    }
+
+    ul li::before {
+        content: '>';
+        @apply text-faded-cyber font-bold absolute -left-1 -top-[3px] text-4xl;
+    }
+
+    /* // padding */
+    .p-section {
+        @apply px-9 md:px-16 xl:px-16;
+    }
+    
+    .pt-section {
+        @apply pt-16 md:pt-20 xl:pt-24;
+    }
+    
+    .pb-section {
+        @apply pb-16 md:pb-20 xl:pb-24;
+    }
+    
+    .py-section {
+        @apply py-16 md:py-20 xl:py-24;
+    }
+    
+    /* // margin */
+    .mt-section {
+        @apply mt-16 md:mt-20 xl:mt-24;
+    }
+    
+    .mb-section {
+        @apply mb-16 md:mb-20 xl:mb-24;
+    }
+    
+    .my-section {
+        @apply my-16 md:my-20 xl:my-24;
+    }
+    
+    .wp-block-column {
+        flex-grow: initial !important;
+        flex-basis: auto !important;
+    }
+    
+    .editor-post-title {
+        text-align: center;
+    }
+    
+    .acf-block-component .acf-block-fields {
+        z-index: 9999;
+    }
+
+/* =Lists
+	-------------------------------------------------------------- */
+    .animate .draw-circle {
+        stroke-dasharray: 76;
+        stroke-dashoffset: 76;
+        animation: draw 0.6s forwards;
+    }
+    
+    .animate .draw-check {
+        stroke-dasharray: 18;
+        stroke-dashoffset: 18;
+        animation: draw 0.6s forwards 0.6s;
+    }
+
+    .animate:before {
+        @apply hidden;
+    }
+    
+    @keyframes draw {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
+
+    /* Accordion Item Component */
+        .accordion-item-enter-active,
+        .accordion-item-leave-active {
+            will-change: height;
+            transition: height 0.3s ease;
+        }
+        .accordion-item-enter,
+        .accordion-item-leave-to {
+            height: 0 !important;
+        }
+
+/* =FAQ
+	-------------------------------------------------------------- */
+    .faq-full {
+        @apply border-t-2 border-dotted border-gray;
+    }
+    .faq-full > div {
+        @apply border-b-2 border-dotted border-gray;
+    }
+    
+    /* =Accordion Arrows
+        -------------------------------------------------------------- */
+    .arrow {
+        transform-origin: 8px 8px;
+        stroke-width: 1.5px;
+    }
+        .arrow path {
+            transition: transform 0.3s, stroke-dashoffset 0.3s;
+            stroke-dashoffset: 8.5;
+            stroke-dasharray: 17;
+            transform: translateY(3px);
+            transform-origin: 8px 8px;
+        }
+    
+        .is-active .arrow path:first-child {
+                transform: translateY(-3px) rotate(-90deg);
+            }
+    
+            .is-active .arrow path:last-child {
+                transform: translateY(-3px) rotate(90deg);
+            }
+
+    /* =Button
+-------------------------------------------------------------- */
+
+.wp-block-button__link {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: rgba(36, 228, 235, 1);
+	border-color: rgba(36, 228, 235, 1);
+	border-radius: 0.375rem;
+	border-width: 2px;
+	color: rgba(0, 37, 57, 1);
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1rem;
+	font-weight: 800;
+	line-height: 1;
+	padding: 0.5rem 2rem;
+	text-decoration-line: none;
+	text-transform: uppercase;
+	transition-duration: 0.3s;
+	transition-property: color, background-color, border-color;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	white-space: nowrap;
+}
+
+.wp-block-button__link:hover {
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
+	background-color: transparent;
+}
+
+.from-black .wp-block-button__link:hover,
+.from-fox-blue .wp-block-button__link:hover,
+.bg-black .wp-block-button__link:hover {
+	color: rgba(255, 255, 255, 1) !important;
+}
+
+@media (min-width: 768px) {
+	.wp-block-button__link {
+		border-width: 3px;
+		font-size: 1.5rem;
+		line-height: 1;
+		padding: 0.625rem 2.5rem;
+	}
+}
+
+/* =Gutenberg Design #{!important}
+	-------------------------------------------------------------- */
+
+    .wp-block-buttons,
+    .wp-block-columns {
+        @apply flex flex-wrap items-center gap-x-8 gap-y-8;
+    }
+    
+    /* // centered */
+    .is-content-justification-center .wp-block-columns,
+    .wp-block-buttons.is-content-justification-center,
+    .is-centered .wp-block-buttons {
+        @apply justify-center;
+    }
+    
+    /* =Buttons
+        -------------------------------------------------------------- */
+    
+    /* // primary button in Gutenberg and Marekto Submit Button [wp-element-button] */
+    .wp-block-search__button,
+    .wp-block-button__link,
+    .mktoButton,
+    .forminator-button {
+        @apply inline-block py-2 px-8 md:py-2.5 md:px-10 bg-cyber-blue border-2 md:border-3 border-cyber-blue rounded-md text-base md:text-4xl leading-none text-fox-blue font-extrabold uppercase antialiased whitespace-nowrap hover:subpixel-antialiased hover:bg-transparent no-underline cursor-pointer transition duration-300 ease-in-out;
+    }
+    
+    /* // primary button on light */
+    .bg-white .wp-block-button__link,
+    .bg-light-gray .wp-block-button__link {
+        @apply hover:text-fox-blue;
+    }
+    
+    .bg-white .mktoButton {
+        @apply hover:text-fox-blue;
+    }
+    
+    /* // primary button on dark */
+    .from-black .wp-block-button__link,
+    .from-fox-blue .wp-block-button__link,
+    .from-faded-cyber .wp-block-button__link,
+    .bg-fox-blue .wp-block-button__link,
+    .bg-blue .wp-block-button__link,
+    .bg-black .wp-block-button__link,
+    .bg-black .mktoButton,
+    .from-fox-blue .mktoButton,
+    .bg-fox-blue .mktoButton {
+        @apply hover:text-white;
+    }
+    
+    /* // outline button on light */
+    .is-style-outline .wp-block-button__link {
+        @apply bg-transparent text-fox-blue hover:bg-cyber-blue;
+    }
+    
+    /* // outline button on dark */
+    .from-black .is-style-outline .wp-block-button__link,
+    .bg-black .is-style-outline .wp-block-button__link {
+        @apply text-white hover:bg-cyber-blue hover:text-fox-blue;
+    }
+
+    /* // small button */
+    .text-sm .wp-block-button__link,
+    .has-small-font-size .wp-block-button__link {
+        @apply py-2 px-9 border-2 text-md;
+    }
+
+    /* // max-width container */
+        @screen 2xl {
+            .max-w-section {
+            margin: auto;
+            max-width: 1640px;
+        }
+    }
+
+    .idx-language-switcher {
+        position: fixed;
+        top: 16;
+        border-radius: 0 0 10px 10px;
+        background: #fff;
+        padding: 5px 10px;
+        border: 1px solid rgba(198, 202, 206, 0.3);
+        border-top: none;
+        display: flex;
+        align-items: center;
+        min-width: 200px;
+        z-index: 999;
+        font-size: 12px;
+        @apply right-9 md:right-16
+    }
+
+    /*
+@media (max-width: 768px) {
+.idx-language-switcher {
+    width: 150px;
+}
+}
+*/
+    .idx-language-switcher--expanded {
+        border-radius: 0;
+    }
+
+    .idx-language-switcher__label {
+        padding-right: 10px;
+        font-size: 12px;
+        text-decoration: none;
+        line-height: 1.1;
+        font-weight: 600;
+    }
+
+    .idx-language-switcher__toggle-and-list {
+        flex-grow: 1;
+    }
+
+    button.idx-language-switcher__toggle {
+        text-align: left;
+        text-transform: uppercase;
+        display: block;
+        width: 100%;
+        border-radius: 6px;
+        padding: 10px 30px 7px 15px;
+        border: 0;
+        background-color: #e0e6ed;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 9'%3E%3Cpath d='M2.21.1,7.5,5.43,12.8.1l1.72,1.73L7.5,8.9l-7-7.07Z' style='fill:%23151348;fill-rule:evenodd'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 10px 6px;
+        color: #151348;
+        line-height: 1.1;
+        height: auto;
+        transition: none !important;
+        box-shadow: none;
+        outline: none;
+        text-transform: none;
+    }
+
+    .idx-language-switcher__list {
+        position: absolute;
+        left: -1px;
+        right: -1px;
+        top: calc(100% - 1px);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: none;
+    }
+
+    .idx-language-switcher__item {
+        @apply mb-0 pl-0;
+    }
+
+    .idx-language-switcher__item:before {
+        @apply content-[''];
+    }
+
+    .idx-language-switcher--expanded .idx-language-switcher__list {
+        display: block;
+        background-color: #fff;
+        border-radius: 0 0 10px 10px;
+        border: 1px solid rgba(198, 202, 206, 0.3);
+        border-top: none;
+        padding: 10px 0;
+    }
+
+    a.idx-language-switcher__link {
+        text-align: center;
+        display: block;
+        text-decoration: none;
+        line-height: 1.1;
+        padding: 5px 20px;
+        font-weight: 600;
+    }
+
+    a.idx-language-switcher__link:hover,
+    a.idx-language-switcher__link:active,
+    a.idx-language-switcher__link:focus {
+       @apply bg-cyber-blue;
+    }
