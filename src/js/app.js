@@ -589,39 +589,5 @@ var app = new Vue({
 	data: {
 		message: "Hello Vue!",
 	},
-	mounted: function () {
-		console.log("testing vanilla JS before script runs");
-		// document
-		// 	.querySelectorAll(".js-idx-language-switcher")
-		// 	.forEach(function () {
-		// 		var switcher = this;
-		// 		var switcherToggle = document.querySelector(
-		// 			".js-idx-language-switcher-toggle",
-		// 			switcher
-		// 		);
-		// 		switcherToggle.addEventListener("click", function () {
-		// 			switcher.classList.toggle(
-		// 				"idx-language-switcher--expanded"
-		// 			);
-		// 			if (
-		// 				switcher.classList.contains(
-		// 					"idx-language-switcher--expanded"
-		// 				)
-		// 			) {
-		// 				switcherToggle.setAttribute("aria-expanded", "true");
-		// 			} else {
-		// 				switcherToggle.setAttribute("aria-expanded", "false");
-		// 			}
-		// 		});
-		// 		document.addEventListener("click", function (event) {
-		// 			if (switcher.event.target.length === 0) {
-		// 				switcher.classList.remove(
-		// 					"idx-language-switcher--expanded"
-		// 				);
-		// 				switcherToggle.setAttribute("aria-expanded", "false");
-		// 			}
-		// 		});
-		// 	});
-		console.log("testing vanilla JS after script runs");
-	},
+	mounted: function () {},
 });
