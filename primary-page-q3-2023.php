@@ -136,14 +136,15 @@ if ($case_type == "Notification") {
 						<div class="h3 mb-4 xl:mb-0">
 							<img class="h-[78px] xl:h-[112px]" src="https://dev.response.idx.us/wp-content/themes/corporate-pro/src/img/logos/IDX-Logo_ZF-tag_preferred_full-color.png" alt="IDX Logo">
 						</div>
-						<a href="https://app.idx.us/account-creation/protect" class="group text-center xl:text-left">
-							<div class="text-lg md:text-3xl xl:text-4xl">Received a breach letter?</div>
-							<div class="text-lg md:text-3xl xl:text-4xl font-bold flex items-center">Enroll to secure your personal information<span class="pl-4"><svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
-										<circle cx="18.5" cy="18.5" r="17.5" class="transition duration-500 ease-in-out stroke-2 stroke-cyber-blue fill-cyber-blue group-hover:fill-transparent"></circle>
-										<path d="M19.62,23.54l5.04-5.04-5.04-5.04m-7.28,10.08l5.04-5.04-5.04-5.04" class="transition duration-500 ease-in-out fill-transparent stroke-2 stroke-white stroke-round group-hover:stroke-cyber-blue"></path>
-									</svg></span></div>
-						</a>
-
+						<?php if ($case_type == "Enrollment") : ?>
+							<a href="https://app.idx.us/account-creation/protect" class="group text-center xl:text-left">
+								<div class="text-lg md:text-3xl xl:text-4xl">Received a breach letter?</div>
+								<div class="text-lg md:text-3xl xl:text-4xl font-bold flex items-center">Enroll to secure your personal information<span class="pl-4"><svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37">
+											<circle cx="18.5" cy="18.5" r="17.5" class="transition duration-500 ease-in-out stroke-2 stroke-cyber-blue fill-cyber-blue group-hover:fill-transparent"></circle>
+											<path d="M19.62,23.54l5.04-5.04-5.04-5.04m-7.28,10.08l5.04-5.04-5.04-5.04" class="transition duration-500 ease-in-out fill-transparent stroke-2 stroke-white stroke-round group-hover:stroke-cyber-blue"></path>
+										</svg></span></div>
+							</a>
+						<?php endif; ?>
 						<div class="absolute m-auto left-0 right-0 -bottom-8 md:-bottom-12 text-center">
 							<div class="bg-light-gray drop-shadow-md m-auto rounded-full inline-block px-2 sm:px-6 md:px-12 xl:px-16">
 								<div class="flex justify-center items-center py-2 md:py-3">
@@ -165,7 +166,7 @@ if ($case_type == "Notification") {
 						<div class="col-span-4 md:col-span-8 xl:col-span-6 2xl:col-start-2 2xl:col-span-5">
 							<div class="mb-8">
 								<?php if ($hero_company_logo) {
-									echo '<img class="h-[130px] w-[130px] mb-4 xl:mb-8 object-contain" src="' . $hero_company_logo . '">';
+									echo '<img class="h-[130px] mb-4 xl:mb-8 object-contain" src="' . $hero_company_logo . '">';
 								}; ?>
 
 								<?php if ($hero_eyebrow) {
