@@ -7,9 +7,6 @@
 ?>
 
 <?php
-// global $post;
-// get_header();
-
 if (post_password_required()) {
     echo '<style>
     body{
@@ -67,7 +64,6 @@ if (post_password_required()) {
     }
     
     </style>';
-    // I had to manually specify the dimensions because the svg files became really huge. That values can be adjusted in a scenario where we change the logo again.
     echo '<img src="/wp-content/uploads/2023/01/IDX-ZF-Logo_preferred.png" height="95" width="238" alt="ZeroFox">';
     echo get_the_password_form();
 } else {
