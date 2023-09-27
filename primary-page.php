@@ -549,6 +549,10 @@ function additional_resources_section($ar_array)
 						</div>
 					<?php endif; ?>
 					<div class="wrap">
+						<?php
+						echo '<img src="/wp-content/uploads/2023/01/IDX-ZF-Logo_preferred.png" height="95" width="238" alt="MyIDCare">';
+						echo get_the_password_form();
+						?>
 						<section class="flex-parent flex-row">
 							<div class="marquee-item flex-child">
 								<?php if (!empty($field['client_logo'])) : ?>

@@ -1,9 +1,5 @@
 <?php
 
-/**
- * Template Name: Updated Enrollment Template - Q3 2023
- */
-
 //  Dynamic Fields
 $field = get_fields();
 $case_type = $field['case_type'];
@@ -170,7 +166,7 @@ if ($case_type == "Notification") {
 								}; ?>
 
 								<?php if ($hero_eyebrow) {
-									echo '<div class="h7 mb-2">' . $$hero_eyebrow . '</div>';
+									echo '<div class="h7 mb-2">' . $hero_eyebrow . '</div>';
 								}; ?>
 
 								<?php if ($hero_title) {
