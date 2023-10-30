@@ -75,6 +75,7 @@ if ($case_type == "Notification") {
 <html class="scroll-smooth">
 
 <head>
+	<?php echo get_the_title(); ?>
 	<!-- CSS File -->
 	<link rel='stylesheet' id='corporate-pro-css' href='https://dev.response.idx.us/wp-content/themes/corporate-pro/public/css/main.css' type='text/css' media='all' />
 
@@ -229,7 +230,7 @@ if ($case_type == "Notification") {
 						<div class="grid grid-cols-4 gap-2.5 md:grid-cols-8 md:gap-4 xl:grid-cols-12">
 							<div class="col-span-4 md:col-span-8 xl:col-start-2 xl:col-span-10 bg-faded-slate rounded-lg py-12 md:py-20 xl:py-24 grid grid-cols-4 gap-2.5 md:grid-cols-8 md:gap-4 xl:grid-cols-10">
 
-								<div class="col-span-4 md:col-span-1 md:col-start-1">
+								<div class="col-span-4 md:col-span-1 md:col-start-1 overflow-hidden">
 									<div class="border-l-5 border-cyber-blue h-full"></div>
 								</div>
 
