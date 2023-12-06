@@ -319,9 +319,9 @@ if ($case_type == "Notification") {
 										<?php endif; ?>
 										<?php if ($display_faq === true) : ?>
 											<div class="h4 mb-8 md:mb-10 xl:mb-14">Frequently Asked Questions</div>
-											<div class="xl:grid<?php if ($faq_section_2_header !== '' || $faq_section_3_header !== '') {
-																	echo ' xl:grid-cols-2 ';
-																} ?>gap-16">
+											<div class="xl:grid<?php if ($display_faq_section_2 === true || $display_faq_section_3 === true) {
+																	echo ' xl:grid-cols-2 gap-16 ';
+																} ?>">
 												<div class="xl:col-start-1 xl:col-span-1 mb-8 md:mb-12 xl:mb-0">
 													<?php if ($display_faq_section_0 === true) : ?>
 														<div class="h6 pb-4 mb-4 border-b-2 border-light-slate"><?= $faq_section_0_header ?></div>
@@ -335,19 +335,23 @@ if ($case_type == "Notification") {
 														</accordion-1>
 													<?php endif; ?>
 												</div>
-												<div class="xl:col-start-2 xl:col-span-1">
-													<?php if ($display_faq_section_2 === true) : ?>
-														<div class="h6 pb-4 mb-4 border-b-2 border-light-slate"><?= $faq_section_2_header ?></div>
-														<accordion-2 class=" faq-full-2  mb-8 md:mb-12" :data='<?php echo json_encode($faq_section_2, JSON_HEX_APOS | JSON_HEX_QUOT); ?>'>
-														</accordion-2>
-													<?php endif; ?>
 
-													<?php if ($display_faq_section_3 === true) : ?>
-														<div class="h6 pb-4 mb-4 border-b-2 border-light-slate"><?= $faq_section_3_header ?></div>
-														<accordion-3 class="faq-full-3" :data='<?php echo json_encode($faq_section_3, JSON_HEX_APOS | JSON_HEX_QUOT); ?>'>
-														</accordion-3>
-													<?php endif; ?>
-												</div>
+												<?php if ($display_faq_section_2 === true || $display_faq_section_3 === true) : ?>
+													<div class="xl:col-start-2 xl:col-span-1">
+														<?php if ($display_faq_section_2 === true) : ?>
+															<div class="h6 pb-4 mb-4 border-b-2 border-light-slate"><?= $faq_section_2_header ?></div>
+															<accordion-2 class=" faq-full-2  mb-8 md:mb-12" :data='<?php echo json_encode($faq_section_2, JSON_HEX_APOS | JSON_HEX_QUOT); ?>'>
+															</accordion-2>
+														<?php endif; ?>
+
+														<?php if ($display_faq_section_3 === true) : ?>
+															<div class="h6 pb-4 mb-4 border-b-2 border-light-slate"><?= $faq_section_3_header ?></div>
+															<accordion-3 class="faq-full-3" :data='<?php echo json_encode($faq_section_3, JSON_HEX_APOS | JSON_HEX_QUOT); ?>'>
+															</accordion-3>
+														<?php endif; ?>
+													</div>
+												<?php endif; ?>
+
 											</div>
 										<?php endif; ?>
 										<?php if ($display_faq === true && $display_additional_resources == true) : ?>
